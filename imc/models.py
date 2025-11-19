@@ -2,13 +2,16 @@ from django.db import models
 from django.contrib.auth import get_user_model
 # Create your models here.
 
-class Tarefas(models.Model):
-    peso = models.CharField(max_length=255)
-    altura = models.CharField(max_length=255)
-    calculo = models.TextField()
-    usuario = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
-    created_at = models.DateTimeField(auto_now_add=True)
-    update_at = models.DateTimeField(auto_now=True)
+from django.db import models
+from django.contrib.auth.models import User
+
+# Create your models here.
+class RegistroIMC(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    peso = models.FloatField()
+    altura = models.FloatField()
+    imc = models.FloatField()
+    data = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.usuario
+        return f"{self.usuario.username} - IMC {self.imc}"

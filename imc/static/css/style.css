@@ -20,8 +20,10 @@ body {
     }
 }
 
+
+
 .container {
-    width: 300px;
+    width: 25rem;
     background-color: rgba(255, 255, 255, 0.95);
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -112,13 +114,14 @@ button.limpar:hover {
     font-weight: bold;
     font-size: 16px;
     color: #222;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.6s ease;
 }
 
 #resultado.mostrar {
     opacity: 1;
 }
+
 
 @media (max-width: 480px) {
 
